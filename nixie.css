@@ -1,0 +1,93 @@
+body {background-color:#112;}
+
+/* The container of the nixie clock */
+.nixcont {
+    margin-left:  auto;
+    margin-right: auto;   
+    width: fit-content;
+    overflow: hidden;
+    position: absolute;
+    top: 50%; 
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+/* Each pair of digits (hour, minute, second) of the nixie clock */
+.nixpair {
+    padding: 0px 5px; 
+    float: left; 
+    height: 100px;
+    pointer-events: none;
+}
+
+.nixdot {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 70px;
+    float: left; 
+    pointer-events: none;
+    text-align: center;
+    color:rgba(60, 40, 20, 1  );
+    pointer-events:none;
+    transition:color 0.5s, text-shadow 0.5s;
+    transition-timing-function:ease-out;
+}
+
+/* Each tube of the nixie clock */
+.nixbg{
+    
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 70px;
+
+    box-sizing: border-box;
+    position: relative;
+    height: 80px;
+    line-height: 80px; 
+    width: 70px;
+    height: 70px;
+    float: left;
+    border-radius: 50%; /*20px;
+    border-bottom-left-radius:0px;
+    border-bottom-right-radius:0px;*/
+
+    /* top right bottom left */
+    padding: 0px 0px 0px 0px; 
+    margin:0px 5px 0px 5px;
+
+    box-shadow: 
+        inset 0px 0px 3px 2px rgba(90,  0,   0, 0.9),
+        inset 0px 0px 2px 3px rgba(230, 220, 0, 1),
+        inset 0px 0px 8px 4px rgba(255, 0,   0, 0.9);
+
+    background-image: url("./honeycomb.png");
+    
+    background-repeat:repeat, no-repeat;
+    background-size:12px, 100%;
+}
+
+/* The "off" appearance of the cathodes */
+.nixbg .nix {
+    width:100%; text-align:center; position:absolute; 
+    color:rgba(60, 40, 20, 1  );
+    pointer-events:none;
+    transition:color 0.5s, text-shadow 0.5s;
+    transition-timing-function:ease-out;
+}
+
+/* The "on" appearance of the cathodes */
+.nixbg .nix_open, .nixdot .nix_open {
+    transition:color 0.2s, text-shadow 0.2s;
+    transition-timing-function:ease-out;
+
+    color: transparent; 
+    text-shadow: 
+        0   0   1px  rgba(254, 252, 124, 1    ),
+        0   0   3px  rgba(255, 217, 54,  0.7  ),
+        0   0   5px  rgba(255, 0,   0,   1    ),
+        0   0   14px rgba(255, 0,   0,   1    ),
+        0   0   17px rgba(255, 0,   0,   1    ),
+        0   0   20px rgba(255, 0,   0,   1    ),
+        0   5px 25px rgba(0,   0,   255, 0.9  );
+
+    font-weight:300;
+    z-index:10;
+}
