@@ -36,14 +36,14 @@ body {background-color:#112;}
 .nixbg{
     
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 70px;
+    font-size: 100px; /*70px;*/
 
     box-sizing: border-box;
     position: relative;
     height: 80px;
-    line-height: 80px; 
-    width: 70px;
-    height: 70px;
+    line-height: 115px; /*80px;*/ 
+    width: 100px; /*70px;*/
+    height: 100px; /*70px;*/
     float: left;
     border-radius: 50%; /*20px;
     border-bottom-left-radius:0px;
